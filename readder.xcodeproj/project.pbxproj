@@ -12,9 +12,11 @@
 		69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B01FE6026D0046C8E4 /* Main.storyboard */; };
 		69E2C9B41FE6026D0046C8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */; };
 		69E2C9B71FE6026D0046C8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B51FE6026D0046C8E4 /* LaunchScreen.storyboard */; };
+		9A4A99096C48F69910E7D0CD /* Pods_readder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D587A720BEB6C5814A075B23 /* Pods_readder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		672CB3230B9AC78934BFFDA1 /* Pods-readder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-readder/Pods-readder.debug.xcconfig"; sourceTree = "<group>"; };
 		69E2C9A91FE6026D0046C8E4 /* readder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = readder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69E2C9AE1FE6026D0046C8E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69E2C9B61FE6026D0046C8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69E2C9B81FE6026D0046C8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D587A720BEB6C5814A075B23 /* Pods_readder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_readder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFCDAD659DE8E0D9AE2731E8 /* Pods-readder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readder.release.xcconfig"; path = "Pods/Target Support Files/Pods-readder/Pods-readder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4A99096C48F69910E7D0CD /* Pods_readder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41A2B72CAB1E2677E15C1EB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				672CB3230B9AC78934BFFDA1 /* Pods-readder.debug.xcconfig */,
+				FFCDAD659DE8E0D9AE2731E8 /* Pods-readder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		46C1E77DE7A2F0EF467C70C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D587A720BEB6C5814A075B23 /* Pods_readder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69E2C9A01FE6026D0046C8E4 = {
 			isa = PBXGroup;
 			children = (
 				69E2C9AB1FE6026D0046C8E4 /* readder */,
 				69E2C9AA1FE6026D0046C8E4 /* Products */,
+				41A2B72CAB1E2677E15C1EB9 /* Pods */,
+				46C1E77DE7A2F0EF467C70C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69E2C9BB1FE6026D0046C8E4 /* Build configuration list for PBXNativeTarget "readder" */;
 			buildPhases = (
+				550F8F1AEFDB54794F73A42C /* [CP] Check Pods Manifest.lock */,
 				69E2C9A51FE6026D0046C8E4 /* Sources */,
 				69E2C9A61FE6026D0046C8E4 /* Frameworks */,
 				69E2C9A71FE6026D0046C8E4 /* Resources */,
+				410874310FAFED3915A3A52A /* [CP] Embed Pods Frameworks */,
+				3975FFB09179172B214746EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3975FFB09179172B214746EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-readder/Pods-readder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		410874310FAFED3915A3A52A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-readder/Pods-readder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-readder/Pods-readder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		550F8F1AEFDB54794F73A42C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-readder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69E2C9A51FE6026D0046C8E4 /* Sources */ = {
@@ -272,6 +357,7 @@
 		};
 		69E2C9BC1FE6026D0046C8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 672CB3230B9AC78934BFFDA1 /* Pods-readder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		69E2C9BD1FE6026D0046C8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFCDAD659DE8E0D9AE2731E8 /* Pods-readder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
