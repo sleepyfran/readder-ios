@@ -1,21 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="readder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much time do you have?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-VP-2Vm">
+                                <rect key="frame" x="0.0" y="219" width="375" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RGc-5c-pup">
+                                <rect key="frame" x="8" y="256" width="359" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="5"/>
+                                    <segment title="10"/>
+                                    <segment title="Infinite!"/>
+                                </segments>
+                            </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hge-vv-pfe">
+                                <rect key="frame" x="8" y="292" width="359" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-7r-rbj">
+                                <rect key="frame" x="8" y="629" width="359" height="30"/>
+                                <state key="normal" title="Let's go!"/>
+                                <connections>
+                                    <action selector="goPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mza-Br-Jbu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-uu-yCw">
+                                <rect key="frame" x="264" y="516" width="103" height="30"/>
+                                <state key="normal" title="edit subreddits"/>
+                                <connections>
+                                    <action selector="editSubredditsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcf-4r-byl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYn-7r-rbj" secondAttribute="bottom" constant="8" id="ABe-EP-qXv"/>
+                            <constraint firstItem="hgb-uu-yCw" firstAttribute="top" secondItem="hge-vv-pfe" secondAttribute="bottom" constant="8" id="BrB-T8-R52"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYn-7r-rbj" secondAttribute="trailing" constant="8" id="D90-FJ-Gng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH4-VP-2Vm" secondAttribute="trailing" id="Gvr-lK-2zo"/>
+                            <constraint firstItem="RGc-5c-pup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K5z-Qv-oPt"/>
+                            <constraint firstItem="KH4-VP-2Vm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sso-fN-Vvv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RGc-5c-pup" secondAttribute="trailing" constant="8" id="Zm7-qv-cOW"/>
+                            <constraint firstItem="KH4-VP-2Vm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.7" id="aS1-kd-aXJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hgb-uu-yCw" secondAttribute="trailing" constant="8" id="bG2-zw-fR5"/>
+                            <constraint firstItem="hge-vv-pfe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="jVK-R2-9Ei"/>
+                            <constraint firstItem="hge-vv-pfe" firstAttribute="top" secondItem="RGc-5c-pup" secondAttribute="bottom" constant="8" id="kg1-xV-mHZ"/>
+                            <constraint firstAttribute="trailing" secondItem="hge-vv-pfe" secondAttribute="trailing" constant="8" id="mP1-mP-u9z"/>
+                            <constraint firstItem="cYn-7r-rbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uJI-sH-UiH"/>
+                            <constraint firstItem="RGc-5c-pup" firstAttribute="top" secondItem="KH4-VP-2Vm" secondAttribute="bottom" constant="8" id="zfv-uI-rGK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="subredditPicker" destination="hge-vv-pfe" id="P1q-jk-K16"/>
+                        <outlet property="timeButtons" destination="RGc-5c-pup" id="16t-Rx-lDc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

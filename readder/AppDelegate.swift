@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Load the API keys from the Keys.plist file. NOTE: You need this file in order for the project to work.
+        // The Keys.plist file should contain, at least, a client_id row containing the Reddit App client ID
+        // that's given to you once you create an app in https://www.reddit.com/prefs/apps
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            let keys = NSDictionary(contentsOfFile: path)
+            
+            clientId = keys!["client_id"] as! String
+        }
+        
         return true
     }
 

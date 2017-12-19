@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69036D501FE618DE003C812F /* SavedSubreddits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69036D4F1FE618DE003C812F /* SavedSubreddits.swift */; };
+		69036D531FE618EE003C812F /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69036D521FE618EE003C812F /* Subreddit.swift */; };
+		69036D5A1FE638FA003C812F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69036D591FE638FA003C812F /* Keys.plist */; };
+		69036D5C1FE6396C003C812F /* RedditApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69036D5B1FE6396C003C812F /* RedditApi.swift */; };
+		6996EB001FE9265200FC40EF /* ApiParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6996EAFF1FE9265200FC40EF /* ApiParameters.swift */; };
+		699AAA281FE60C0400C61CC1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AAA271FE60C0400C61CC1 /* MainViewController.swift */; };
+		69BBC7871FE6417E007D9962 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */; };
 		69E2C9AD1FE6026D0046C8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */; };
-		69E2C9AF1FE6026D0046C8E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2C9AE1FE6026D0046C8E4 /* ViewController.swift */; };
 		69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B01FE6026D0046C8E4 /* Main.storyboard */; };
 		69E2C9B41FE6026D0046C8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */; };
 		69E2C9B71FE6026D0046C8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B51FE6026D0046C8E4 /* LaunchScreen.storyboard */; };
@@ -17,9 +23,15 @@
 
 /* Begin PBXFileReference section */
 		672CB3230B9AC78934BFFDA1 /* Pods-readder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-readder/Pods-readder.debug.xcconfig"; sourceTree = "<group>"; };
+		69036D4F1FE618DE003C812F /* SavedSubreddits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSubreddits.swift; sourceTree = "<group>"; };
+		69036D521FE618EE003C812F /* Subreddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
+		69036D591FE638FA003C812F /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		69036D5B1FE6396C003C812F /* RedditApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditApi.swift; sourceTree = "<group>"; };
+		6996EAFF1FE9265200FC40EF /* ApiParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParameters.swift; sourceTree = "<group>"; };
+		699AAA271FE60C0400C61CC1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
 		69E2C9A91FE6026D0046C8E4 /* readder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = readder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69E2C9AE1FE6026D0046C8E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69E2C9B11FE6026D0046C8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69E2C9B61FE6026D0046C8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +69,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		69036D4D1FE61582003C812F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				69036D4F1FE618DE003C812F /* SavedSubreddits.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		69036D4E1FE61842003C812F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				69036D5B1FE6396C003C812F /* RedditApi.swift */,
+				69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */,
+				6996EAFF1FE9265200FC40EF /* ApiParameters.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		69036D511FE618E1003C812F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69036D521FE618EE003C812F /* Subreddit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		699AAA261FE607F900C61CC1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				699AAA271FE60C0400C61CC1 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		69E2C9A01FE6026D0046C8E4 = {
 			isa = PBXGroup;
 			children = (
@@ -78,12 +124,16 @@
 		69E2C9AB1FE6026D0046C8E4 /* readder */ = {
 			isa = PBXGroup;
 			children = (
+				69036D511FE618E1003C812F /* Model */,
+				69036D4E1FE61842003C812F /* Networking */,
+				69036D4D1FE61582003C812F /* Persistence */,
+				699AAA261FE607F900C61CC1 /* Controllers */,
 				69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */,
-				69E2C9AE1FE6026D0046C8E4 /* ViewController.swift */,
 				69E2C9B01FE6026D0046C8E4 /* Main.storyboard */,
 				69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */,
 				69E2C9B51FE6026D0046C8E4 /* LaunchScreen.storyboard */,
 				69E2C9B81FE6026D0046C8E4 /* Info.plist */,
+				69036D591FE638FA003C812F /* Keys.plist */,
 			);
 			path = readder;
 			sourceTree = "<group>";
@@ -150,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69036D5A1FE638FA003C812F /* Keys.plist in Resources */,
 				69E2C9B71FE6026D0046C8E4 /* LaunchScreen.storyboard in Resources */,
 				69E2C9B41FE6026D0046C8E4 /* Assets.xcassets in Resources */,
 				69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */,
@@ -182,14 +233,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-readder/Pods-readder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -221,8 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E2C9AF1FE6026D0046C8E4 /* ViewController.swift in Sources */,
+				69036D531FE618EE003C812F /* Subreddit.swift in Sources */,
+				69BBC7871FE6417E007D9962 /* ApiEndpoints.swift in Sources */,
 				69E2C9AD1FE6026D0046C8E4 /* AppDelegate.swift in Sources */,
+				69036D501FE618DE003C812F /* SavedSubreddits.swift in Sources */,
+				699AAA281FE60C0400C61CC1 /* MainViewController.swift in Sources */,
+				6996EB001FE9265200FC40EF /* ApiParameters.swift in Sources */,
+				69036D5C1FE6396C003C812F /* RedditApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
