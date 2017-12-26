@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3vK-4C-C45">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much time do you have?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-VP-2Vm">
-                                <rect key="frame" x="0.0" y="219" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="285.5" width="375" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RGc-5c-pup">
-                                <rect key="frame" x="8" y="256" width="359" height="29"/>
+                                <rect key="frame" x="24" y="322.5" width="327" height="29"/>
                                 <segments>
                                     <segment title="1"/>
                                     <segment title="5"/>
@@ -34,50 +34,111 @@
                                     <segment title="Infinite!"/>
                                 </segments>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hge-vv-pfe">
-                                <rect key="frame" x="8" y="292" width="359" height="216"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-7r-rbj">
                                 <rect key="frame" x="8" y="629" width="359" height="30"/>
-                                <state key="normal" title="Let's go!"/>
+                                <state key="normal" title="Get me a random post!"/>
                                 <connections>
                                     <action selector="goPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mza-Br-Jbu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-uu-yCw">
-                                <rect key="frame" x="264" y="516" width="103" height="30"/>
-                                <state key="normal" title="edit subreddits"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minutes to read from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74c-J8-0uB">
+                                <rect key="frame" x="105.5" y="358.5" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaA-uT-jCO">
+                                <rect key="frame" x="132" y="387.5" width="111" height="30"/>
+                                <state key="normal" title="select subreddit"/>
                                 <connections>
-                                    <action selector="editSubredditsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcf-4r-byl"/>
+                                    <action selector="selectSubredditPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDC-id-8lD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UaA-uT-jCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8sh-CH-jJU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYn-7r-rbj" secondAttribute="bottom" constant="8" id="ABe-EP-qXv"/>
-                            <constraint firstItem="hgb-uu-yCw" firstAttribute="top" secondItem="hge-vv-pfe" secondAttribute="bottom" constant="8" id="BrB-T8-R52"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYn-7r-rbj" secondAttribute="trailing" constant="8" id="D90-FJ-Gng"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH4-VP-2Vm" secondAttribute="trailing" id="Gvr-lK-2zo"/>
-                            <constraint firstItem="RGc-5c-pup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K5z-Qv-oPt"/>
+                            <constraint firstItem="RGc-5c-pup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="K5z-Qv-oPt"/>
                             <constraint firstItem="KH4-VP-2Vm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sso-fN-Vvv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RGc-5c-pup" secondAttribute="trailing" constant="8" id="Zm7-qv-cOW"/>
-                            <constraint firstItem="KH4-VP-2Vm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.7" id="aS1-kd-aXJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hgb-uu-yCw" secondAttribute="trailing" constant="8" id="bG2-zw-fR5"/>
-                            <constraint firstItem="hge-vv-pfe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="jVK-R2-9Ei"/>
-                            <constraint firstItem="hge-vv-pfe" firstAttribute="top" secondItem="RGc-5c-pup" secondAttribute="bottom" constant="8" id="kg1-xV-mHZ"/>
-                            <constraint firstAttribute="trailing" secondItem="hge-vv-pfe" secondAttribute="trailing" constant="8" id="mP1-mP-u9z"/>
+                            <constraint firstItem="74c-J8-0uB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TZl-Ew-KNa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RGc-5c-pup" secondAttribute="trailing" constant="24" id="Zm7-qv-cOW"/>
+                            <constraint firstItem="UaA-uT-jCO" firstAttribute="top" secondItem="74c-J8-0uB" secondAttribute="bottom" constant="8" id="aGb-h8-5Em"/>
+                            <constraint firstItem="KH4-VP-2Vm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="aS1-kd-aXJ"/>
+                            <constraint firstItem="74c-J8-0uB" firstAttribute="top" secondItem="RGc-5c-pup" secondAttribute="bottom" constant="8" id="b6f-vV-zzL"/>
                             <constraint firstItem="cYn-7r-rbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uJI-sH-UiH"/>
                             <constraint firstItem="RGc-5c-pup" firstAttribute="top" secondItem="KH4-VP-2Vm" secondAttribute="bottom" constant="8" id="zfv-uI-rGK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6fU-69-NSB"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="subredditPicker" destination="hge-vv-pfe" id="P1q-jk-K16"/>
+                        <outlet property="selectedSubredditButton" destination="UaA-uT-jCO" id="XtG-KG-Ork"/>
                         <outlet property="timeButtons" destination="RGc-5c-pup" id="16t-Rx-lDc"/>
+                        <segue destination="LZH-QF-vJ5" kind="showDetail" identifier="editSubreddits" action="showViewController:sender:" id="WBT-95-oxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137" y="32"/>
+        </scene>
+        <!--Edit Subreddits View Controller-->
+        <scene sceneID="ENN-bN-riO">
+            <objects>
+                <tableViewController id="LZH-QF-vJ5" customClass="EditSubredditsViewController" customModule="readder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jpp-hX-LCd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subredditCell" textLabel="6hc-wM-kcm" style="IBUITableViewCellStyleDefault" id="gMA-MN-dXS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gMA-MN-dXS" id="zI7-qh-iDE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6hc-wM-kcm">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LZH-QF-vJ5" id="zmC-iX-2ej"/>
+                            <outlet property="delegate" destination="LZH-QF-vJ5" id="ezG-d0-Kho"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-wO-FNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4RE-iv-LzM">
+            <objects>
+                <navigationController id="3vK-4C-C45" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mpr-QD-lYb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Llr-JR-XY1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-jF-IYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-809" y="34"/>
         </scene>
     </scenes>
 </document>

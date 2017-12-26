@@ -6,4 +6,9 @@
 //  Copyright © 2017 Fran González. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+// Saved subreddits of the user.
+class SavedSubreddits: Object {
+    let subreddits = List<Subreddit>()
+}
