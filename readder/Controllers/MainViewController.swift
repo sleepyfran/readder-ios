@@ -18,6 +18,7 @@ class MainViewController : UIViewController {
     
     // MARK: Lifecycle events.
     override func viewDidLoad() {
+        super.viewDidLoad()
         selectedSubredditButton.setTitle("select subreddit", for: .normal)
         
         // Hide the top bar.
@@ -25,6 +26,7 @@ class MainViewController : UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         // Show the top bar again.
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
