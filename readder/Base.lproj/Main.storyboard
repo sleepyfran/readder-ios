@@ -80,11 +80,55 @@
                         <outlet property="selectedSubredditButton" destination="UaA-uT-jCO" id="XtG-KG-Ork"/>
                         <outlet property="timeButtons" destination="RGc-5c-pup" id="16t-Rx-lDc"/>
                         <segue destination="LZH-QF-vJ5" kind="showDetail" identifier="editSubreddits" action="showViewController:sender:" id="WBT-95-oxG"/>
+                        <segue destination="ivo-wr-Fqc" kind="show" identifier="showStory" id="prb-kc-w4m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="32"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="0zX-qt-gUV">
+            <objects>
+                <viewController id="ivo-wr-Fqc" customClass="StoryViewController" customModule="readder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pti-tL-t7x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nY-sf-oHG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Story" id="kfE-1N-eZM"/>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiz-Bf-eeI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u2l-Lm-47V" firstAttribute="bottom" secondItem="iiz-Bf-eeI" secondAttribute="bottom" id="IB5-C9-ftc"/>
+                            <constraint firstItem="u2l-Lm-47V" firstAttribute="trailing" secondItem="iiz-Bf-eeI" secondAttribute="trailing" id="IsX-I2-nNX"/>
+                            <constraint firstItem="8nY-sf-oHG" firstAttribute="trailing" secondItem="u2l-Lm-47V" secondAttribute="trailing" id="OUT-a6-nQE"/>
+                            <constraint firstItem="iiz-Bf-eeI" firstAttribute="leading" secondItem="u2l-Lm-47V" secondAttribute="leading" id="UbQ-LX-GBv"/>
+                            <constraint firstItem="8nY-sf-oHG" firstAttribute="leading" secondItem="u2l-Lm-47V" secondAttribute="leading" id="eYm-je-4N3"/>
+                            <constraint firstItem="iiz-Bf-eeI" firstAttribute="top" secondItem="8nY-sf-oHG" secondAttribute="bottom" id="gIZ-ZK-CL4"/>
+                            <constraint firstItem="8nY-sf-oHG" firstAttribute="top" secondItem="Pti-tL-t7x" secondAttribute="top" id="h8K-36-NI3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u2l-Lm-47V"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="iiz-Bf-eeI" id="0mr-31-OoT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gn-GW-Qjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="32"/>
         </scene>
         <!--Edit Subreddits View Controller-->
         <scene sceneID="ENN-bN-riO">
@@ -121,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-wO-FNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="32"/>
+            <point key="canvasLocation" x="137" y="829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4RE-iv-LzM">

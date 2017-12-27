@@ -12,6 +12,24 @@ import RealmSwift
 class Database {
     // MARK: Saved subreddits.
     
+    // Checks whether the database contains anything and, if not, adds some random subreddits.
+    static func initialize() {
+        let realm = try! Realm()
+        let results = realm.objects(Subreddit.self)
+        
+        if results.isEmpty {
+            let subredditsToCreate = [("nosleep", "day"), ("writingprompt", "day")]
+            
+            try! realm.write() {
+                for tuple in subredditsToCreate {
+                    let subreddit = realm.create(Subreddit.self)
+                    subreddit.name = tuple.0
+                    subreddit.time = tuple.1
+                }
+            }
+        }
+    }
+    
     // Retrieves all the saved subreddits.
     static func getSavedSubreddits() -> [Subreddit] {
         let realm = try! Realm()

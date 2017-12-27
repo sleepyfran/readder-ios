@@ -8,7 +8,7 @@
 
 // MARK: Access Token and Base URLs
 let ACCESS_TOKEN_URL = "https://www.reddit.com/api/v1/access_token"
-let BASE_URL = "https://oauth.reddit.com/"
+let BASE_URL = "https://oauth.reddit.com"
 
 // MARK: Endpoints
-let SUBREEDIT_ENDPOINT = "r/nosleep/top.json"
+let SUBREEDIT_ENDPOINT = "/r/nosleep/top.json"

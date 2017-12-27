@@ -12,7 +12,7 @@ class EditSubredditsViewController : UITableViewController {
     // Subreddits loaded from the database.
     var subreddits: [Subreddit] = []
     
-    // MARK: Basic controller stuff.
+    // MARK: Lifecycle events.
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "subredditCell")
@@ -26,9 +26,21 @@ class EditSubredditsViewController : UITableViewController {
         tableView.reloadData()
     }
     
+    // MARK: Alerts.
+    func showListEmptyAlert() {
+        let alert = UIAlertController(title: "Subreddits empty", message: "The list cannot be empty", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: Database interaction.
+    func removeSubreddit(at index: Int) {
+        Database.removeSubreddit(subreddits[index])
+        subreddits.remove(at: index)
+    }
+    
     // MARK: UITableViewDataSource methods.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(subreddits.count)
         return subreddits.count
     }
     
@@ -43,9 +55,14 @@ class EditSubredditsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            // Don't let the list be empty.
+            if subreddits.count == 1 {
+                showListEmptyAlert()
+                return
+            }
+            
             // Delete the row from the data source and make an animation.
-            Database.removeSubreddit(subreddits[indexPath.row])
-            subreddits.remove(at: indexPath.row)
+            removeSubreddit(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Insert a new row with the data.

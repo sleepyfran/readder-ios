@@ -20,6 +20,7 @@
 		69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B01FE6026D0046C8E4 /* Main.storyboard */; };
 		69E2C9B41FE6026D0046C8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */; };
 		69E2C9B71FE6026D0046C8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B51FE6026D0046C8E4 /* LaunchScreen.storyboard */; };
+		69E5FD8E1FF44B9A005A97D0 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E5FD8D1FF44B9A005A97D0 /* StoryViewController.swift */; };
 		9A4A99096C48F69910E7D0CD /* Pods_readder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D587A720BEB6C5814A075B23 /* Pods_readder.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		69E2C9B31FE6026D0046C8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69E2C9B61FE6026D0046C8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69E2C9B81FE6026D0046C8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E5FD8D1FF44B9A005A97D0 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		D587A720BEB6C5814A075B23 /* Pods_readder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_readder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCDAD659DE8E0D9AE2731E8 /* Pods-readder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readder.release.xcconfig"; path = "Pods/Target Support Files/Pods-readder/Pods-readder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			children = (
 				699AAA271FE60C0400C61CC1 /* MainViewController.swift */,
 				6908ACA41FEC857900C8289E /* EditSubredditsViewController.swift */,
+				69E5FD8D1FF44B9A005A97D0 /* StoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E5FD8E1FF44B9A005A97D0 /* StoryViewController.swift in Sources */,
 				69036D531FE618EE003C812F /* Subreddit.swift in Sources */,
 				69BBC7871FE6417E007D9962 /* ApiEndpoints.swift in Sources */,
 				69E2C9AD1FE6026D0046C8E4 /* AppDelegate.swift in Sources */,

@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientId = keys!["client_id"] as! String
         }
         
+        // Initialize the database.
+        Database.initialize()
+        
         return true
     }
 
