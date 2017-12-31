@@ -7,32 +7,34 @@
 //
 
 import UIKit
-import WebKit
+import Down
 
 class StoryViewController: UIViewController {
-    // Web view in which we'll show the content of the post.
-    @IBOutlet weak var webView: WKWebView!
-    
-    // Details of the post we're going to show
-    var storyTitle: String!
-    var storyContent: String!
+    // Story that we will be showing.
+    var story: Story!
     
     // MARK: Lifecycle events.
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Hide the navigations bar when the user scrolled through the story.
-        navigationController?.hidesBarsOnSwipe = true
+        
         setupNavigationBar()
-        showStory()
+        setupMarkdownView()
     }
     
     // MARK: UI setup.
     func setupNavigationBar() {
-        self.title = storyTitle
+        self.title = story.title
     }
     
-    func showStory() {
-        self.webView.loadHTMLString(storyContent, baseURL: nil)
+    func setupMarkdownView() {
+        // Create a DownView and set its AutoLayout properties.
+        let markdownView = try! DownView(frame: self.view.bounds, markdownString: story.content)
+        self.view.addSubview(markdownView)
+        
+        markdownView.translatesAutoresizingMaskIntoConstraints = false
+        markdownView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        markdownView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        markdownView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        markdownView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }

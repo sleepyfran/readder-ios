@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - Down (0.4.2)
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
   - Realm/Headers (3.0.2)
@@ -12,12 +13,15 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
   - SwiftSpinner (1.5.0)
+  - SwiftyJSON (4.0.0)
   - SwiftyPickerPopover (5.3.0)
 
 DEPENDENCIES:
+  - Down
   - RealmSwift
   - RxAlamofire
   - SwiftSpinner
+  - SwiftyJSON
   - SwiftyPickerPopover (from `https://github.com/hsylife/SwiftyPickerPopover`, branch `swift4`)
 
 EXTERNAL SOURCES:
@@ -32,13 +36,15 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Down: 92efba7c95a8efdb84b7114e365db4a37f3df76e
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyPickerPopover: a0599689c09b7ec97d287271d755c22506d848cb
 
-PODFILE CHECKSUM: 67f1acf17eafb9fe680470e81672390813c664d7
+PODFILE CHECKSUM: 7544e1265521fb5d157318547e88f1c5eab8542b
 
 COCOAPODS: 1.3.1

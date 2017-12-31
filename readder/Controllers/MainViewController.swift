@@ -20,9 +20,8 @@ class MainViewController : UIViewController {
     // Name of the selected subreddit.
     var selectedSubreddit: String? = nil
     
-    // Details of the post we're going to the StoryViewController.
-    var storyTitle: String? = nil
-    var storyContent: String? = nil
+    // Story (post) we're going to the StoryViewController.
+    var story: Story? = nil
     
     // MARK: Lifecycle events.
     override func viewDidLoad() {
@@ -31,7 +30,10 @@ class MainViewController : UIViewController {
         
         // Initialize the Reddit things.
         SwiftSpinner.show("Connecting to Reddit...")
-        _ = RedditApi.getAccessToken().subscribe({ _ in SwiftSpinner.hide() })
+        _ = RedditApi.getAccessToken().subscribe(
+            onNext: { _ in SwiftSpinner.hide() },
+            onError: { error in print(error) }
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +52,17 @@ class MainViewController : UIViewController {
     
     // MARK: User interaction.
     @IBAction func goPressed(_ sender: UIButton) {
-        // Show a load view,
-        // Load the top 10 posts of the last 24 hours from the selected subreddit,
-        // Filter them by time,
-        // Show a random one from those!
-        storyTitle = "Random"
-        storyContent = "<h1>Test</h1>"
-        performSegue(withIdentifier: "showStory", sender: sender)
+        SwiftSpinner.show("Loading your story from \(selectedSubreddit!)...")
+        
+        _ = RedditApi.getStories(from: selectedSubreddit!, time: "day").subscribe(
+            onNext: { stories in
+                self.story = randomStory(from: stories)
+                SwiftSpinner.hide()
+                
+                self.performSegue(withIdentifier: "showStory", sender: sender)
+            },
+            onError: { error in print(error) }
+        )
     }
     
     @IBAction func selectSubredditPressed(_ sender: UIButton) {
@@ -84,8 +90,7 @@ class MainViewController : UIViewController {
         if segue.identifier == "showStory" {
             // Pass the title and post content of the story.
             let storyViewController = segue.destination as! StoryViewController
-            storyViewController.storyTitle = storyTitle
-            storyViewController.storyContent = storyContent
+            storyViewController.story = story
         }
     }
 }

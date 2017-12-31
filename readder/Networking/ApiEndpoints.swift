@@ -11,4 +11,6 @@ let ACCESS_TOKEN_URL = "https://www.reddit.com/api/v1/access_token"
 let BASE_URL = "https://oauth.reddit.com"
 
 // MARK: Endpoints
-let SUBREEDIT_ENDPOINT = "/r/nosleep/top.json"
+func subredditEndpoint(_ subreddit: String, time: String, limit: Int) -> String {
+    return "\(BASE_URL)/r/\(subreddit)/top.json?t=\(time)&limit=\(limit)"
+}

@@ -8,10 +8,11 @@
 
 import RxSwift
 import RxAlamofire
+import SwiftyJSON
 
 class RedditApi {
     // MARK: Stuff we need to keep track of.
-    static var accesToken: String?
+    private static var accesToken: String?
     
     // MARK: General headers.
     static let headers = [
@@ -31,13 +32,42 @@ class RedditApi {
                                        ACCESS_TOKEN_URL,
                                        parameters: ACCESS_TOKEN_PARAMETERS,
                                        headers: authHeaders)
-        .map({ (response, json) in
+        .map({ (response, data) in
+            let json = JSON(data)
+            
             // Let's the save the token for later use.
-            if let dict = json as? [String: AnyObject] {
-                accesToken = dict["access_token"] as? String
-            }
+            accesToken = json["access_token"].string
             
             return response
+        })
+        .observeOn(MainScheduler.instance)
+    }
+    
+    // MARK: Subreddit functions.
+    
+    static func getStories(from subreddit: String, time: String, max: Int = 20) -> Observable<[Story]> {
+        var bearerHeaders = headers
+        let credentials = "\(accesToken!)"
+        bearerHeaders["Authorization"] = "Bearer \(credentials)"
+        
+        return RxAlamofire.requestJSON(.get,
+                                       subredditEndpoint(subreddit, time: time, limit: max),
+                                       headers: bearerHeaders)
+        .map({ (response, data) in
+            let json = JSON(data)
+            var stories: [Story] = []
+            
+            // Iterate through all the posts turning them into stories.
+            for (_, post):(String, JSON) in json["data"]["children"] {
+                let postData = post["data"]
+                let title = postData["title"].string
+                let content = postData["selftext"].string
+                
+                let story = Story(title: title!, content: content!)
+                stories.append(story)
+            }
+            
+            return stories
         })
         .observeOn(MainScheduler.instance)
     }
