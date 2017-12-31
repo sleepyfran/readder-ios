@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Retrieves a random story from a given array of stories. Basically generates a random number between 0 and the number
+// of stories inside the array and returns that index.
 func randomStory(from stories: [Story]) -> Story {
     let lowerBound: UInt32 = 0
     let upperBound = UInt32(stories.count)
