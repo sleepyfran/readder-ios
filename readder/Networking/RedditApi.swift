@@ -10,6 +10,9 @@ import RxSwift
 import RxAlamofire
 import SwiftyJSON
 
+/**
+ Static class that provides methods to interact with the Reddit API.
+*/
 class RedditApi {
     // MARK: Stuff we need to keep track of.
     private static var accesToken: String?
@@ -30,8 +33,11 @@ class RedditApi {
     
     // MARK: Authentication functions.
     
-    // Gets the access token needed to interact with the Reddit API. Do not modify anything here except estrictly needed,
-    // all the parameters or endpoint changes should be done in its separate file (ApiParameters or ApiEndpoints).
+    /**
+     Obtains the access token needed to interact with the Reddit API.
+     
+     - returns: An observable wrapping the `HTTPURLResponse`.
+    */
     static func getAccessToken() -> Observable<HTTPURLResponse> {
         let authHeaders = basicAuthHeaders(of: headers)
         
@@ -52,7 +58,15 @@ class RedditApi {
     
     // MARK: Subreddit functions.
     
-    // Returns a given number of stories from the specified subreddit in the specified time (day, week, month, etc.).
+    /**
+     Obtains stories from a subreddit.
+     
+     - parameter from: Subreddit from where to obtain the stories.
+     - parameter time: Time of the posts to filter (day, week, month...)
+     - parameter max: Maximum number of posts to get.
+     
+     - returns: Observable wrapping an array of `Story`.
+    */
     static func getStories(from subreddit: String, time: Time, max: Int = 20) -> Observable<[Story]> {
         let bearerHeaders = bearerAuthHeaders(of: headers, accessToken: accesToken!)
         

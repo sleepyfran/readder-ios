@@ -8,11 +8,15 @@
 
 import RealmSwift
 
-// Class defining the interactions with the database.
+/**
+ Defines the interaction with the `Realm` database.
+*/
 class Database {
     // MARK: Saved subreddits.
-    
-    // Checks whether the database contains anything and, if not, adds some random subreddits.
+
+    /**
+     Checkes whether the database contains anything and, if not, adds some subreddits.
+    */
     static func initialize() {
         let realm = try! Realm()
         let results = realm.objects(Subreddit.self)
@@ -31,6 +35,12 @@ class Database {
     }
     
     // Retrieves all the saved subreddits.
+    
+    /**
+     Retrieves all the saved subreddits of the user.
+     
+     - returns: An array of subreddits.
+    */
     static func getSavedSubreddits() -> [Subreddit] {
         let realm = try! Realm()
         let results = realm.objects(Subreddit.self)
@@ -38,7 +48,11 @@ class Database {
         return Array(results)
     }
     
-    // Removes an specific subreddit from the list.
+    /**
+     Removes an specific subreddit from the list.
+     
+     - parameter subreddit: The subreddit to remove.
+    */
     static func removeSubreddit(_ subreddit: Subreddit) {
         let realm = try! Realm()
         
@@ -47,14 +61,25 @@ class Database {
         }
     }
     
-    // Returns an specific Subreddit by its name.
+    /**
+     Returns an specific Subreddit by its name.
+     
+     - parameter name: Name of the subreddit to obtain.
+     
+     - returns: Object `Results` containing the results of the query.
+    */
     static func getSubredditBy(name: String) -> Results<Subreddit> {
         let realm = try! Realm()
         
         return realm.objects(Subreddit.self).filter("name = '%@'", name)
     }
     
-    // Saves the specified Subreddit instance to the database.
+    /**
+     Saves the specified Subreddit instance to the database.
+     
+     - parameter name: Name of the subreddit to add.
+     - parameter time: Time from which we want to filter the posts.
+    */
     static func add(name: String, time: String) {
         let realm = try! Realm()
         

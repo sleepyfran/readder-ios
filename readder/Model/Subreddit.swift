@@ -8,8 +8,9 @@
 
 import RealmSwift
 
-// Representation of a subreddit with the data we need in order to save it in our "database"
-// and do API requests later.
+/**
+ Representation of a subreddit for the `Realm` database.
+*/
 class Subreddit : Object {
     // Name of the subreddit that will be loaded. Example: nosleep.
     @objc dynamic var name: String = ""

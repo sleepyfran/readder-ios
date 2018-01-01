@@ -8,7 +8,9 @@
 
 import RealmSwift
 
-// Saved subreddits of the user.
+/**
+ List of subreddits saved by the user for the `Realm` database.
+*/
 class SavedSubreddits: Object {
     let subreddits = List<Subreddit>()
 }

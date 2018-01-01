@@ -6,7 +6,13 @@
 //  Copyright © 2018 Fran González. All rights reserved.
 //
 
-// Appends the basic authentication header to a given set of parameters.
+/**
+ Appends the basic authentication header to a given set of parameters.
+ 
+ - parameter of: Actual headers.
+ 
+ - returns: A dictionary with the added basic authentication header.
+*/
 func basicAuthHeaders(of headers: [String:String]) -> [String:String] {
     var authHeaders = headers
     let credentials = "\(clientId):".data(using: String.Encoding.utf8)?.base64EncodedString()
@@ -15,7 +21,13 @@ func basicAuthHeaders(of headers: [String:String]) -> [String:String] {
     return authHeaders
 }
 
-// Appens the bearer authentication header to a given set of parameters.
+/**
+ Appens the bearer authentication header to a given set of parameters.
+ 
+ - parameter of: Actual headers.
+ 
+ - returns: A dictionary with the added bearer authentication header.
+ */
 func bearerAuthHeaders(of headers: [String:String], accessToken: String) -> [String:String] {
     var bearerHeaders = headers
     let credentials = "\(accessToken)"
