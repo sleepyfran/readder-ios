@@ -21,6 +21,7 @@ class MainViewController : UIViewController {
     var selectedSubreddit: String? = nil
     
     // Story (post) we're going to the StoryViewController.
+    // Story (post) we're going to send the StoryViewController.
     var story: Story? = nil
     
     // MARK: Lifecycle events.
