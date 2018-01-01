@@ -13,7 +13,7 @@ import Foundation
 // Initialized in the AppDelegate with the loaded client_id from the Keys.plist file.
 var clientId = ""
 
-// Parameters needed in the access token petition.
+// Parameters needed in the access token request.
 let ACCESS_TOKEN_PARAMETERS = [
     "grant_type": "https://oauth.reddit.com/grants/installed_client",
     "user": clientId,

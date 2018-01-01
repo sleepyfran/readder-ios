@@ -20,7 +20,6 @@ class MainViewController : UIViewController {
     // Name of the selected subreddit.
     var selectedSubreddit: String? = nil
     
-    // Story (post) we're going to the StoryViewController.
     // Story (post) we're going to send the StoryViewController.
     var story: Story? = nil
     
@@ -55,7 +54,7 @@ class MainViewController : UIViewController {
     @IBAction func goPressed(_ sender: UIButton) {
         SwiftSpinner.show("Loading your story from \(selectedSubreddit!)...")
         
-        _ = RedditApi.getStories(from: selectedSubreddit!, time: "day").subscribe(
+        _ = RedditApi.getStories(from: selectedSubreddit!, time: .day).subscribe(
             onNext: { stories in
                 self.story = randomStory(from: stories)
                 SwiftSpinner.hide()

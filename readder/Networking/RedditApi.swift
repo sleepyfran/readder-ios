@@ -19,6 +19,15 @@ class RedditApi {
         "User-Agent": "spaceisstrange.io.readder:v1.0"
     ]
     
+    // MARK: Time values.
+    enum Time: String {
+        case day = "day"
+        case week = "week"
+        case month = "month"
+        case year = "year"
+        case allTime = "all"
+    }
+    
     // MARK: Authentication functions.
     
     // Gets the access token needed to interact with the Reddit API. Do not modify anything here except estrictly needed,
@@ -33,7 +42,7 @@ class RedditApi {
         .map({ (response, data) in
             let json = JSON(data)
             
-            // Let's the save the token for later use.
+            // Save the token for later use.
             accesToken = json["access_token"].string
             
             return response
@@ -44,11 +53,11 @@ class RedditApi {
     // MARK: Subreddit functions.
     
     // Returns a given number of stories from the specified subreddit in the specified time (day, week, month, etc.).
-    static func getStories(from subreddit: String, time: String, max: Int = 20) -> Observable<[Story]> {
+    static func getStories(from subreddit: String, time: Time, max: Int = 20) -> Observable<[Story]> {
         let bearerHeaders = bearerAuthHeaders(of: headers, accessToken: accesToken!)
         
         return RxAlamofire.requestJSON(.get,
-                                       subredditEndpoint(subreddit, time: time, limit: max),
+                                       subredditEndpoint(subreddit, time: time.rawValue, limit: max),
                                        headers: bearerHeaders)
         .map({ (response, data) in
             let json = JSON(data)
