@@ -17,6 +17,7 @@
 		699021061FF9414C0043D93E /* RandomStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699021051FF9414C0043D93E /* RandomStory.swift */; };
 		6996EB001FE9265200FC40EF /* ApiParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6996EAFF1FE9265200FC40EF /* ApiParameters.swift */; };
 		699AAA281FE60C0400C61CC1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AAA271FE60C0400C61CC1 /* MainViewController.swift */; };
+		69AA7E111FFAC512002D7916 /* ApiCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA7E101FFAC512002D7916 /* ApiCredentials.swift */; };
 		69BBC7871FE6417E007D9962 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */; };
 		69E2C9AD1FE6026D0046C8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */; };
 		69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E2C9B01FE6026D0046C8E4 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		699021051FF9414C0043D93E /* RandomStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStory.swift; sourceTree = "<group>"; };
 		6996EAFF1FE9265200FC40EF /* ApiParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParameters.swift; sourceTree = "<group>"; };
 		699AAA271FE60C0400C61CC1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69AA7E101FFAC512002D7916 /* ApiCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCredentials.swift; sourceTree = "<group>"; };
 		69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
 		69E2C9A91FE6026D0046C8E4 /* readder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = readder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E2C9AC1FE6026D0046C8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				69036D5B1FE6396C003C812F /* RedditApi.swift */,
 				69BBC7861FE6417E007D9962 /* ApiEndpoints.swift */,
 				6996EAFF1FE9265200FC40EF /* ApiParameters.swift */,
+				69AA7E101FFAC512002D7916 /* ApiCredentials.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				69E2C9AD1FE6026D0046C8E4 /* AppDelegate.swift in Sources */,
 				69036D501FE618DE003C812F /* SavedSubreddits.swift in Sources */,
 				699AAA281FE60C0400C61CC1 /* MainViewController.swift in Sources */,
+				69AA7E111FFAC512002D7916 /* ApiCredentials.swift in Sources */,
 				6996EB001FE9265200FC40EF /* ApiParameters.swift in Sources */,
 				6908ACA51FEC857900C8289E /* EditSubredditsViewController.swift in Sources */,
 				696DA5601FEB3BA7000AFEA8 /* Database.swift in Sources */,

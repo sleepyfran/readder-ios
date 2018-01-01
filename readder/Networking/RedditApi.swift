@@ -24,9 +24,7 @@ class RedditApi {
     // Gets the access token needed to interact with the Reddit API. Do not modify anything here except estrictly needed,
     // all the parameters or endpoint changes should be done in its separate file (ApiParameters or ApiEndpoints).
     static func getAccessToken() -> Observable<HTTPURLResponse> {
-        var authHeaders = headers
-        let credentials = "\(clientId):".data(using: String.Encoding.utf8)?.base64EncodedString()
-        authHeaders["Authorization"] = "Basic \(credentials!)"
+        let authHeaders = basicAuthHeaders(of: headers)
         
         return RxAlamofire.requestJSON(.post,
                                        ACCESS_TOKEN_URL,
@@ -45,10 +43,9 @@ class RedditApi {
     
     // MARK: Subreddit functions.
     
+    // Returns a given number of stories from the specified subreddit in the specified time (day, week, month, etc.).
     static func getStories(from subreddit: String, time: String, max: Int = 20) -> Observable<[Story]> {
-        var bearerHeaders = headers
-        let credentials = "\(accesToken!)"
-        bearerHeaders["Authorization"] = "Bearer \(credentials)"
+        let bearerHeaders = bearerAuthHeaders(of: headers, accessToken: accesToken!)
         
         return RxAlamofire.requestJSON(.get,
                                        subredditEndpoint(subreddit, time: time, limit: max),
