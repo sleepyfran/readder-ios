@@ -71,11 +71,16 @@ class MainViewController : UIViewController {
         let subredditsName = subreddits.map { $0.name }
         
         // Show a bottom UIPicker with the subreddits.
-        ActionSheetStringPicker.show(withTitle: "Select a subreddit", rows: subredditsName, initialSelection: 0, doneBlock: { picker, index, value in
-            let pickedSubreddit = value as! String
-            self.selectedSubredditButton.setTitle(pickedSubreddit, for: .normal)
-            self.selectedSubreddit = pickedSubreddit
-        }, cancel: { _ in return }, origin: sender)
+        ActionSheetStringPicker.show(
+            withTitle: "Select a subreddit",
+            rows: subredditsName,
+            initialSelection: 0,
+            doneBlock: { picker, index, value in
+                let pickedSubreddit = value as! String
+                self.selectedSubredditButton.setTitle(pickedSubreddit, for: .normal)
+                self.selectedSubreddit = pickedSubreddit
+            },
+            cancel: { _ in return }, origin: sender)
     }
     
     // MARK: Segue-related methods.
