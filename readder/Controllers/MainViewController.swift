@@ -80,7 +80,8 @@ class MainViewController : UIViewController {
                 self.selectedSubredditButton.setTitle(pickedSubreddit, for: .normal)
                 self.selectedSubreddit = pickedSubreddit
             },
-            cancel: { _ in return }, origin: sender)
+            cancel: { _ in return }, origin: sender
+        )
     }
     
     // MARK: Segue-related methods.
