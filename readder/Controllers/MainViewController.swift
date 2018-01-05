@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SwiftyPickerPopover
 import SwiftSpinner
+import ActionSheetPicker_3_0
 
 class MainViewController : UIViewController {
     // Segmented buttons with the time selected by the user.
@@ -70,18 +70,12 @@ class MainViewController : UIViewController {
         let subreddits = Database.getSavedSubreddits()
         let subredditsName = subreddits.map { $0.name }
         
-        StringPickerPopover(title: "Subreddit", choices: subredditsName)
-            .setSelectedRow(0)
-            .setDoneButton(action: { (popover, selectedRow, selectedString) in
-                self.selectedSubredditButton.setTitle(selectedString, for: .normal)
-                self.selectedSubreddit = selectedString
-            })
-            .setCancelButton(title: "Edit", action: { (popover, selectedRow, selectedString) in
-                // Override the cancel button to show an edit action that allows the user to edit the subreddits
-                // that are shown here. Basically perform the editSubreddits segue.
-                self.performSegue(withIdentifier: "editSubreddits", sender: sender)
-            })
-            .appear(originView: sender, baseViewController: self)
+        // Show a bottom UIPicker with the subreddits.
+        ActionSheetStringPicker.show(withTitle: "Select a subreddit", rows: subredditsName, initialSelection: 0, doneBlock: { picker, index, value in
+            let pickedSubreddit = value as! String
+            self.selectedSubredditButton.setTitle(pickedSubreddit, for: .normal)
+            self.selectedSubreddit = pickedSubreddit
+        }, cancel: { _ in return }, origin: sender)
     }
     
     // MARK: Segue-related methods.

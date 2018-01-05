@@ -8,5 +8,5 @@ target 'readder' do
     pod 'SwiftyJSON'
     pod 'SwiftSpinner'
     pod 'Down'
-    pod 'SwiftyPickerPopover', :git => 'https://github.com/hsylife/SwiftyPickerPopover', :branch => 'swift4'
+    pod 'ActionSheetPicker-3.0'
 end
