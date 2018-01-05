@@ -70,9 +70,9 @@ class MainViewController : UIViewController {
         let subreddits = Database.getSavedSubreddits()
         let subredditsName = subreddits.map { $0.name }
         
-        // Show a bottom UIPicker with the subreddits.
-        ActionSheetStringPicker.show(
-            withTitle: "Select a subreddit",
+        // Configure the UIPicker to let the user select a subreddit.
+        let subredditPicker = ActionSheetStringPicker(
+            title: "Select a subreddit",
             rows: subredditsName,
             initialSelection: 0,
             doneBlock: { picker, index, value in
@@ -82,6 +82,11 @@ class MainViewController : UIViewController {
             },
             cancel: { _ in return }, origin: sender
         )
+        subredditPicker?.addCustomButton(withTitle: "Edit", actionBlock: {
+            self.performSegue(withIdentifier: "editSubreddits", sender: sender)
+        })
+        subredditPicker?.setCancelButton(nil)
+        subredditPicker?.show()
     }
     
     // MARK: Segue-related methods.
