@@ -28,18 +28,27 @@ class EditSubredditsViewController : UITableViewController {
     
     // MARK: Alerts.
     func showListEmptyAlert() {
-        let alertController = simpleModal(
+        self.showPopup(
             title: "Subreddits empty",
             message: "The list cannot be empty",
             buttonTitle: "Okay",
-            buttonHandler: { self.dismiss(animated: true, completion: nil) })
-        
-        self.present(alertController, animated: true, completion: nil)
+            buttonHandler: { self.dismiss(animated: true, completion: nil) }
+        )
     }
     
     // MARK: User interaction.
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        // Show the new subreddit popup dialog.
+        self.showInputPopup(
+            title: "Add a new subreddit",
+            message: "Make sure it's a text subreddit!",
+            textFieldPlaceholder: "nosleep",
+            buttonTitle: "Add",
+            buttonHandler: { subredditName in
+                // Add the subreddit to the database.
+                Database.add(name: subredditName, time: "day")
+            }
+        )
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {

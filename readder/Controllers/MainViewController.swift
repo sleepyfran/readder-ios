@@ -54,13 +54,11 @@ class MainViewController : UIViewController {
     @IBAction func goPressed(_ sender: UIButton) {
         // Check if there is any subreddit selected.
         if selectedSubreddit == nil {
-            let alertController = simpleModal(
+            self.showPopup(
                 title: "No subreddit selected",
                 message: "Please, select a subreddit!",
                 buttonTitle: "Okay",
                 buttonHandler: { self.dismiss(animated: true, completion: nil) })
-            
-            self.present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -78,13 +76,11 @@ class MainViewController : UIViewController {
                 
                 // If there is no stories available, show a pop-up.
                 if suitableStory == nil {
-                    let alertController = simpleModal(
+                    self.showPopup(
                         title: "No stories matching the specified minutes",
                         message: "Try selecting more minutes",
                         buttonTitle: "Okay",
                         buttonHandler: { self.dismiss(animated: true, completion: nil) })
-                    
-                    self.present(alertController, animated: true, completion: nil)
                 } else {
                     // Show the reading screen with the random story.
                     self.story = suitableStory
