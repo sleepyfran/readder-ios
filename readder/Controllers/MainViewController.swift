@@ -52,6 +52,19 @@ class MainViewController : UIViewController {
     
     // MARK: User interaction.
     @IBAction func goPressed(_ sender: UIButton) {
+        // Check if there is any subreddit selected.
+        if selectedSubreddit == nil {
+            let alertController = simpleModal(
+                title: "No subreddit selected",
+                message: "Please, select a subreddit!",
+                buttonTitle: "Okay",
+                buttonHandler: { self.dismiss(animated: true, completion: nil) })
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        // Let's roll!
         SwiftSpinner.show("Loading your story from \(selectedSubreddit!)...")
         
         // Get the selected time available.
@@ -65,16 +78,11 @@ class MainViewController : UIViewController {
                 
                 // If there is no stories available, show a pop-up.
                 if suitableStory == nil {
-                    let alertController = UIAlertController(
+                    let alertController = simpleModal(
                         title: "No stories matching the specified minutes",
                         message: "Try selecting more minutes",
-                        preferredStyle: .alert)
-                    
-                    let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    
-                    alertController.addAction(okAction)
+                        buttonTitle: "Okay",
+                        buttonHandler: { self.dismiss(animated: true, completion: nil) })
                     
                     self.present(alertController, animated: true, completion: nil)
                 } else {

@@ -85,6 +85,11 @@ func randomNumber(lowerBound: Int = 0, upperBound: Int) -> Int {
  - returns: A random story from the array given in the `from` parameter.
 */
 func randomStory(from stories: [Story], time: ReadingTimes) -> Story? {
+    // Check if there's any story here.
+    if stories.count == 0 {
+        return nil
+    }
+    
     // If the user has "infinite" time just return the first random one.
     if (time == ReadingTimes.Infinite) {
         let randomIndex = randomNumber(upperBound: stories.count)
