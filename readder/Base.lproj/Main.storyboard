@@ -35,7 +35,7 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-7r-rbj">
-                                <rect key="frame" x="8" y="629" width="359" height="30"/>
+                                <rect key="frame" x="8" y="621" width="359" height="30"/>
                                 <state key="normal" title="Get me a random post!"/>
                                 <connections>
                                     <action selector="goPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mza-Br-Jbu"/>
@@ -58,7 +58,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UaA-uT-jCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8sh-CH-jJU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYn-7r-rbj" secondAttribute="bottom" constant="8" id="ABe-EP-qXv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYn-7r-rbj" secondAttribute="bottom" constant="16" id="ABe-EP-qXv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYn-7r-rbj" secondAttribute="trailing" constant="8" id="D90-FJ-Gng"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH4-VP-2Vm" secondAttribute="trailing" id="Gvr-lK-2zo"/>
                             <constraint firstItem="RGc-5c-pup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="K5z-Qv-oPt"/>
