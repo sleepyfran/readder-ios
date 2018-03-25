@@ -15,8 +15,12 @@ class EditSubredditsViewController : UITableViewController {
     // MARK: Lifecycle events.
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Configure the table view.
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "subredditCell")
         tableView.isEditing = true
+        
+        // Hide the table view's separator line.
+        tableView.separatorColor = UIColor.clear
         
         subreddits = Database.getSavedSubreddits()
     }
@@ -27,6 +31,10 @@ class EditSubredditsViewController : UITableViewController {
     }
     
     // MARK: Alerts.
+    
+    /**
+     Shows an alert indicating that the subreddits list cannot be empty.
+    */
     func showListEmptyAlert() {
         self.showPopup(
             title: "Subreddits empty",
@@ -47,6 +55,11 @@ class EditSubredditsViewController : UITableViewController {
             buttonHandler: { subredditName in
                 // Add the subreddit to the database.
                 Database.add(name: subredditName, time: "day")
+                
+                DispatchQueue.main.async {
+                    self.subreddits = Database.getSavedSubreddits()
+                    self.tableView.reloadData()
+                }
             }
         )
     }
