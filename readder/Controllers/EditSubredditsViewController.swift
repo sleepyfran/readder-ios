@@ -36,6 +36,14 @@ class EditSubredditsViewController : UITableViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: User interaction.
+    @IBAction func addPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func savePressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Database interaction.

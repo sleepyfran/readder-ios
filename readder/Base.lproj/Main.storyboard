@@ -82,7 +82,7 @@
                     <connections>
                         <outlet property="selectedSubredditButton" destination="UaA-uT-jCO" id="XtG-KG-Ork"/>
                         <outlet property="timeButtons" destination="RGc-5c-pup" id="16t-Rx-lDc"/>
-                        <segue destination="LZH-QF-vJ5" kind="showDetail" identifier="editSubreddits" action="showViewController:sender:" id="WBT-95-oxG"/>
+                        <segue destination="fd0-o5-fDF" kind="showDetail" identifier="editSubreddits" action="showViewController:sender:" id="WBT-95-oxG"/>
                         <segue destination="ivo-wr-Fqc" kind="show" identifier="showStory" id="prb-kc-w4m"/>
                     </connections>
                 </viewController>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1102" y="32"/>
         </scene>
-        <!--Edit Subreddits View Controller-->
+        <!--Edit subreddits-->
         <scene sceneID="ENN-bN-riO">
             <objects>
-                <tableViewController id="LZH-QF-vJ5" customClass="EditSubredditsViewController" customModule="readder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Edit subreddits" id="LZH-QF-vJ5" customClass="EditSubredditsViewController" customModule="readder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jpp-hX-LCd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,18 @@
                             <outlet property="delegate" destination="LZH-QF-vJ5" id="ezG-d0-Kho"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Edit subreddits" id="uc7-jl-Awu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="x3e-JI-1Fo">
+                            <connections>
+                                <action selector="savePressed:" destination="LZH-QF-vJ5" id="qgd-0n-FlY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1UD-sG-sNE">
+                            <connections>
+                                <action selector="addPressed:" destination="LZH-QF-vJ5" id="XSJ-BH-FXM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-wO-FNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,6 +170,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-jF-IYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-810" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2pF-RW-byk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fd0-o5-fDF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Mj-38-sCM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LZH-QF-vJ5" kind="relationship" relationship="rootViewController" id="i4n-qR-mUT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dvt-Ji-BvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="829"/>
         </scene>
     </scenes>
 </document>
