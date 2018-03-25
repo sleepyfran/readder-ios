@@ -28,9 +28,14 @@ class EditSubredditsViewController : UITableViewController {
     
     // MARK: Alerts.
     func showListEmptyAlert() {
-        let alert = UIAlertController(title: "Subreddits empty", message: "The list cannot be empty", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
-        self.present(alert, animated: true, completion: nil)
+        let alertController = simpleModal(
+            title: "Subreddits empty",
+            message: "The list cannot be empty",
+            buttonTitle: "Okay",
+            buttonHandler: { self.dismiss(animated: true, completion: nil) })
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     }
     
     // MARK: Database interaction.
