@@ -22,7 +22,9 @@ class Database {
         let results = realm.objects(Subreddit.self)
         
         if results.isEmpty {
-            let subredditsToCreate = [("nosleep", "day"), ("lifeofnorman", "day")]
+            let subredditsToCreate = [("nosleep", "day"),
+                                      ("lifeofnorman", "day"),
+                                      ("shortscarystories", "day")]
             
             try! realm.write() {
                 for tuple in subredditsToCreate {

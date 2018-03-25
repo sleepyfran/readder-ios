@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much time do you have?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-VP-2Vm">
-                                <rect key="frame" x="0.0" y="285.5" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="285" width="375" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RGc-5c-pup">
-                                <rect key="frame" x="24" y="322.5" width="327" height="29"/>
+                                <rect key="frame" x="24" y="323" width="327" height="31"/>
                                 <segments>
                                     <segment title="1"/>
                                     <segment title="5"/>
@@ -42,13 +42,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minutes to read from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74c-J8-0uB">
-                                <rect key="frame" x="105.5" y="358.5" width="164" height="21"/>
+                                <rect key="frame" x="105.5" y="361" width="164" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaA-uT-jCO">
-                                <rect key="frame" x="132" y="387.5" width="111" height="30"/>
+                                <rect key="frame" x="132" y="399" width="111" height="30"/>
                                 <state key="normal" title="select subreddit"/>
                                 <connections>
                                     <action selector="selectSubredditPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDC-id-8lD"/>
@@ -62,12 +62,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYn-7r-rbj" secondAttribute="trailing" constant="8" id="D90-FJ-Gng"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH4-VP-2Vm" secondAttribute="trailing" id="Gvr-lK-2zo"/>
                             <constraint firstItem="RGc-5c-pup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="K5z-Qv-oPt"/>
+                            <constraint firstItem="UaA-uT-jCO" firstAttribute="height" secondItem="KH4-VP-2Vm" secondAttribute="height" id="M8q-D9-sA5"/>
+                            <constraint firstItem="74c-J8-0uB" firstAttribute="height" secondItem="KH4-VP-2Vm" secondAttribute="height" id="NEN-Tx-3Fq"/>
                             <constraint firstItem="KH4-VP-2Vm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sso-fN-Vvv"/>
                             <constraint firstItem="74c-J8-0uB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TZl-Ew-KNa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RGc-5c-pup" secondAttribute="trailing" constant="24" id="Zm7-qv-cOW"/>
                             <constraint firstItem="UaA-uT-jCO" firstAttribute="top" secondItem="74c-J8-0uB" secondAttribute="bottom" constant="8" id="aGb-h8-5Em"/>
                             <constraint firstItem="KH4-VP-2Vm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="aS1-kd-aXJ"/>
                             <constraint firstItem="74c-J8-0uB" firstAttribute="top" secondItem="RGc-5c-pup" secondAttribute="bottom" constant="8" id="b6f-vV-zzL"/>
+                            <constraint firstItem="RGc-5c-pup" firstAttribute="height" secondItem="KH4-VP-2Vm" secondAttribute="height" id="gsM-AI-9cg"/>
                             <constraint firstItem="cYn-7r-rbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uJI-sH-UiH"/>
                             <constraint firstItem="RGc-5c-pup" firstAttribute="top" secondItem="KH4-VP-2Vm" secondAttribute="bottom" constant="8" id="zfv-uI-rGK"/>
                         </constraints>
@@ -154,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-jF-IYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="34"/>
+            <point key="canvasLocation" x="-810" y="32"/>
         </scene>
     </scenes>
 </document>

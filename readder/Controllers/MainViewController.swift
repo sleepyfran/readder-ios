@@ -54,12 +54,34 @@ class MainViewController : UIViewController {
     @IBAction func goPressed(_ sender: UIButton) {
         SwiftSpinner.show("Loading your story from \(selectedSubreddit!)...")
         
+        // Get the selected time available.
+        let selectedTimeIndex = timeButtons.selectedSegmentIndex
+        let mappedTime = ReadingTimes(rawValue: selectedTimeIndex)
+        
         _ = RedditApi.getStories(from: selectedSubreddit!, time: .day).subscribe(
             onNext: { stories in
-                self.story = randomStory(from: stories)
+                let suitableStory = randomStory(from: stories, time: mappedTime!)
                 SwiftSpinner.hide()
                 
-                self.performSegue(withIdentifier: "showStory", sender: sender)
+                // If there is no stories available, show a pop-up.
+                if suitableStory == nil {
+                    let alertController = UIAlertController(
+                        title: "No stories matching the specified minutes",
+                        message: "Try selecting more minutes",
+                        preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    alertController.addAction(okAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    // Show the reading screen with the random story.
+                    self.story = suitableStory
+                    self.performSegue(withIdentifier: "showStory", sender: sender)
+                }
             },
             onError: { error in print(error) }
         )
