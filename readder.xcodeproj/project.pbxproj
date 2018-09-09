@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D68B29421456F950086D4AA /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D68B29321456F950086D4AA /* Keys.plist */; };
 		69036D501FE618DE003C812F /* SavedSubreddits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69036D4F1FE618DE003C812F /* SavedSubreddits.swift */; };
 		69036D531FE618EE003C812F /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69036D521FE618EE003C812F /* Subreddit.swift */; };
 		69036D5A1FE638FA003C812F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69036D591FE638FA003C812F /* Keys.plist */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D68B29321456F950086D4AA /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		672CB3230B9AC78934BFFDA1 /* Pods-readder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-readder/Pods-readder.debug.xcconfig"; sourceTree = "<group>"; };
 		69036D4F1FE618DE003C812F /* SavedSubreddits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSubreddits.swift; sourceTree = "<group>"; };
 		69036D521FE618EE003C812F /* Subreddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				69E2C9B51FE6026D0046C8E4 /* LaunchScreen.storyboard */,
 				69E2C9B81FE6026D0046C8E4 /* Info.plist */,
 				69036D591FE638FA003C812F /* Keys.plist */,
+				1D68B29321456F950086D4AA /* Keys.plist */,
 			);
 			path = readder;
 			sourceTree = "<group>";
@@ -182,7 +185,6 @@
 				69E2C9A61FE6026D0046C8E4 /* Frameworks */,
 				69E2C9A71FE6026D0046C8E4 /* Resources */,
 				410874310FAFED3915A3A52A /* [CP] Embed Pods Frameworks */,
-				3975FFB09179172B214746EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,27 +238,13 @@
 				69E2C9B71FE6026D0046C8E4 /* LaunchScreen.storyboard in Resources */,
 				69E2C9B41FE6026D0046C8E4 /* Assets.xcassets in Resources */,
 				69E2C9B21FE6026D0046C8E4 /* Main.storyboard in Resources */,
+				1D68B29421456F950086D4AA /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3975FFB09179172B214746EC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-readder/Pods-readder-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		410874310FAFED3915A3A52A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
